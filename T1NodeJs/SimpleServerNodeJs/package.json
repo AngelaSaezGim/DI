@@ -1,12 +1,15 @@
 {
-  "name": "webserver",
+  "name": "t1nodejs",
   "version": "1.0.0",
-  "description": "webserver practica",
-  "main": "index.js",
+  "description": "Proyecto T1 Node.js",
+  "main": "index.js", 
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ." 
+    "start": "node SimpleServerNodeJs/index.js"
   },
-  "author": "Angela",
+  "dependencies": {
+    "express": "^4.18.2" 
+  },
+  "devDependencies": {},
+  "author": "Ángela",
   "license": "ISC"
 }

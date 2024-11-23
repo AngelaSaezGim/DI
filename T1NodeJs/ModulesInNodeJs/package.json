@@ -1,0 +1,17 @@
+{
+  "name": "pruebas",
+  "version": "1.0.0",
+  "main": "index3.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "author": "Angela",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "moment": "^2.30.1",
+    "user-info": "^1.0.0"
+  }
+}
