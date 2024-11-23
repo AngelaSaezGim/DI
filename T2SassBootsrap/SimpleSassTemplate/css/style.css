@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,700&display=swap");
+body {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Nunito, sans-serif;
+  font-weight: 400px;
+  /*
+  The heading fonts (h1 to h3) will have a font weight of 700, and their
+  size will be larger than the body text at each step (50% larger for h3,
+  100% larger for h2, and 200% larger for h1)*/
+}
+body h1 {
+  font-weight: 700px;
+  font-size: 200%;
+}
+body h2 {
+  font-weight: 700px;
+  font-size: 100%;
+}
+body h3 {
+  font-weight: 700px;
+  font-size: 50%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  background-color: gray;
+  margin: 0;
+  width: 100%; /* Asegura que el header ocupe el 100% del ancho */
+  padding-block: 1%;
+  text-align: center;
+}
+header .img_logo {
+  display: inline;
+  width: 10%; /* taking up 10% of the header's width */
+  width: 100px;
+  height: 80px;
+  background-image: url("../img/logo.svg");
+  background-size: cover;
+  float: left;
+}
+header h1, header h2 {
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 90%;
+}
+
+nav {
+  background-color: gray;
+  margin: 1%;
+  width: 100%;
+  text-align: center;
+  padding-block: 0.8%;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  padding-inline-start: 1%;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 110%;
+  font-weight: 400;
+}
+nav ul li :hover {
+  font-weight: 700;
+  color: red;
+}
+
+section {
+  min-height: 20em;
+}
+
+footer {
+  width: 100%;
+}
+footer div {
+  background-color: gray;
+  text-align: center;
+  padding: 0.5%;
+}
+footer div img {
+  display: inline;
+  margin-inline-end: 1%;
+  width: 3em;
+}
+footer p {
+  background-color: gray;
+  text-align: center;
+  font-size: 80%;
+}/*# sourceMappingURL=style.css.map */

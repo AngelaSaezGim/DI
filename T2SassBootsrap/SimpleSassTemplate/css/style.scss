@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,700&display=swap');
+
+$font-size:(
+    "body":1rem,
+    "h1":200%, //200% de body
+    "h2":100%, //100% de body
+    "h3":50%, //50% de body
+    "menu-items": 110%,
+    "p_footer":80%
+);
+
+body{
+    //  page to a maximum width of 1400px
+    max-width: 1400px;
+    margin: 0 auto; 
+    // center it in the browser window
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    //The font across the entire page will be Nunito, with sans-serif as the fallback
+    font-family: Nunito, sans-serif;
+    //The body text will have a font weight of 400 with a size of 1rem.
+    font-weight: 400px;
+    font-size: map-get($font-size,"parrafos");
+
+    /*
+    The heading fonts (h1 to h3) will have a font weight of 700, and their
+    size will be larger than the body text at each step (50% larger for h3,
+    100% larger for h2, and 200% larger for h1)*/
+
+    h1{
+        font-weight: 700px;
+        font-size: map-get($font-size,"h1"); // 200% del tamaño del texto base (herencia)
+    }
+
+    h2{
+        font-weight: 700px;
+        font-size: map-get($font-size,"h2"); // 100%
+    }
+
+    h3{
+        font-weight: 700px;
+        font-size: map-get($font-size,"h3"); // 50%
+    }
+    
+}
+
+a{
+    text-decoration: none;
+    color: inherit; 
+}
+
+// header 
+
+header{
+
+    //Add a background color and a small padding to the four sides of the header.
+
+    background-color: gray;
+    margin: 0;
+    width: 100%; /* Asegura que el header ocupe el 100% del ancho */
+    padding-block: 1%;
+    // The page title should appear centered //with the subtitle below it, also centered
+    text-align: center;
+    
+
+    .img_logo {
+        display: inline;
+        width: 10%; /* taking up 10% of the header's width */
+        width: 100px;
+        height: 80px;
+        background-image: url('../img/logo.svg');
+        background-size: cover; 
+        float: left;
+    }
+
+      h1, h2{
+        display: block;
+        // Reset the margins of the titles in the header.
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        //  in the remaining space of the header
+        width: 90%;      
+      }
+}
+
+
+//nav 
+
+nav{
+
+    //  have the same background color
+    background-color: gray;
+    // be slightly separated from the header
+    margin: 1%;
+    // nav will take up the full available width
+    width: 100%;
+    text-align: center;
+    padding-block: 0.8%;
+
+    ul{
+        // with no margin and
+        margin:0;
+        padding: 0;
+
+    li{
+        // menu items should be inline and centered on the screen
+        display: inline-block;
+        list-style: none;
+        //huequito entre los items
+        // minimal padding between them
+        padding-inline-start: 1%;
+        margin:0;
+        text-align: center;
+
+        // The menu items should be uppercase, with a font size 110% of the body size, a weight of 400, and 700 on hover.
+        text-transform: uppercase; 
+        font-size: map-get($font-size,"menu-items");
+        font-weight: 400; 
+
+        :hover {
+            font-weight: 700;
+            // except on hover,  where they will turn red
+            color:red;
+        }
+    }
+}
+}
+
+section{
+    // Apply a minimum height of 20em to the section
+    min-height: 20em; 
+}
+
+//footer 
+
+footer{
+    width: 100%;
+
+    div{
+        // The footer icons will have a width of 3em, be centered and inline, with  some spacing between them
+        background-color: gray;
+        text-align: center;
+        padding: 0.5%;
+
+        img {
+            display: inline;
+            //spacing
+            margin-inline-end: 1%;
+            width: 3em;
+        }
+    }
+
+    p{
+        background-color: gray;
+        text-align: center;
+        font-size:map-get($font-size,"p_footer");
+    }
+}
