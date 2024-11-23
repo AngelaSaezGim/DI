@@ -1,0 +1,14 @@
+// ANTES de importar Bootstrap
+$success: #867ee9;
+$primary: #2e1961;
+
+$theme-colors: (
+  "primary": $primary,
+  "success": $success,
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+body {
+  background-color: $success;
+}
