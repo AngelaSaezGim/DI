@@ -1,0 +1,12 @@
+{
+  "name": "webserver",
+  "version": "1.0.0",
+  "description": "webserver practica",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ." 
+  },
+  "author": "Angela",
+  "license": "ISC"
+}
