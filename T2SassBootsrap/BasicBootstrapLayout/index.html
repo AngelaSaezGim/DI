@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap act1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+     <!--ROW 1-->
+    <header class="border border-black border-1 
+                bg-secondary-subtle text-secondary-emphasis
+                m-1
+                d-flex flex-row
+                justify-content-center
+                align-items-center">
+        A
+    </header>
+<!--ROW 2 (con columnas dentro)-->
+    <main class="d-flex flex-column flex-md-row">
+        <!-- ASIDE 1 (col-md-1) COLUMNA 1-->
+        <aside class="border border-black border-1 
+                    bg-secondary-subtle text-secondary-emphasis
+                    m-1 
+                    d-flex d-flex-column
+                    col-12 col-md-1
+                    justify-content-center
+                    align-items-center">
+            C
+        </aside>
+        <!-- SECTION + NAV col-md=10 COLUMNA 2--> 
+        <div class="col-12 col-md-10">
+            <!-- COLUMNA 2 - FILA 1 (nav)-->
+            <nav class="border border-black border-1 
+                bg-secondary-subtle text-secondary-emphasis
+                m-1 
+                d-flex
+                justify-content-center
+                align-items-center">
+            B
+            </nav>
+            <!-- COLUMNA 2 - FILA 2 (Section)-->
+            <section class="border border-black border-1 
+                    bg-secondary-subtle text-secondary-emphasis
+                    m-1 
+                    d-flex
+                    justify-content-center
+                    align-items-center" style="min-height: 200px;"> <!--No me dejaba de ninguna forma-->
+            D
+            </section>
+        </div>
+        <!-- ASIDE 2 (col-md-1) COLUMNA 3-->
+        <aside class="border border-black border-1 
+                    bg-secondary-subtle text-secondary-emphasis
+                    m-1
+                    d-flex d-flex-column
+                    col-12 col-md-1
+                    justify-content-center
+                    align-items-center">
+            E
+        </aside>
+    </main>
+    <!--ROW 3-->
+    <footer class="border border-black border-1 
+            bg-secondary-subtle text-secondary-emphasis
+            m-1
+            d-flex flex-row
+            justify-content-center            
+            align-items-center">
+        F
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

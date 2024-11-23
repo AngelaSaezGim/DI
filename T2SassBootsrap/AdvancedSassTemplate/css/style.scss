@@ -1,0 +1,207 @@
+@import "variables";
+// IMPORTS ************************************************************************************************************/
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700');
+
+/* ESTILOS GLOBALES ***************************************************************************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
+body {
+    font: $cuerpo;
+    color: $default-foreground;
+}
+
+h {
+    &1 {
+        font: map-get($font-weights, "bold") map-get($font-sizes, quote(#{&})) $font-family;
+        color: random-red(); // RANDOM ROJO
+    }
+
+    &2 {
+        font: map-get($font-weights, "bold") map-get($font-sizes, quote(#{&})) $font-family;
+        color: random-green(); // RANDOM VERDE
+    }
+
+    &3 {
+        font: map-get($font-weights, "bold") map-get($font-sizes, quote(#{&})) $font-family;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $default-foreground;
+}
+
+/* HEADER *************************************************************************************************************/
+
+header {
+    text-align: center;
+    background-color: $default-background;
+    padding: 0.5em;
+
+    img {
+        width: 10%;
+        float: left;
+    }
+
+    h1,
+    h2 {
+        width: 90%;
+        margin: $default-margin;
+    }
+
+}
+
+/* NAV ****************************************************************************************************************/
+//Mixing
+
+@mixin navs() {
+
+        li{
+
+        display: inline-block;
+        margin: $default-margin;
+        padding: 0.2em;
+        font: map-get($font-weights, "bold") map-get($font-sizes, quote(#{&})) $font-family;
+
+        a {
+            font-weight: map-get($font-weights, "regular");
+
+            &:hover {
+                text-decoration: underline;
+                font-weight: map-get($font-weights, "bold");
+            }
+        }
+    }
+}
+
+  
+nav {
+    background-color: $default-background;
+    padding: 0.1em;
+    margin: 0.5em 0 0 0;
+    text-align: center;
+    text-transform: uppercase;
+
+    ul {
+        list-style: none;
+        margin: $default-margin;
+        @include navs(); // USO NAVS
+
+        @media (max-width: 768px) {
+            li {
+                display: block; // Hace que los elementos de la lista se dispongan uno debajo del otro
+                margin: 0; // Elimina márgenes entre elementos
+            }
+        }
+    }
+
+}
+
+/* SECTION ************************************************************************************************************/
+
+
+section {
+    min-height: 20em;
+    padding: 1em;
+
+    .div-section {
+
+        // BLOQUES
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; //pequeños margenes entre articulos
+
+        // COLORES BACKGROUND ALEATORIOS
+        @for $i from 1 through 6{
+            article:nth-child(#{$i}) {
+                background-color: random-backgroundcolor();
+            }
+        }
+
+        article {
+            //TEXTO - ARTICULO (DENTRO)
+            display: flex; 
+            align-items: center;
+            flex: 0 0 33%; // Cada artículo ocupa un tercio del ancho (3 COLUMNAS)
+            margin-bottom: 0.6em; //margen entre las filas
+            padding: 2em;
+
+            @media (max-width: 992px) {
+                flex: 0 0 calc(50% - 0.3em); // Cada artículo ocupa casi la mitad del ancho MENOS EL MARGEN (2 COLUMNAS)
+                margin-left: 0.3em; // Margen a la izquierda
+                margin-bottom: 0.3em; // Margen en la parte inferior para la separación de filas
+                }
+                   
+
+            @media (max-width: 768px) {
+                flex: 0 0 100%; // Cada artículo ocupa el 100% del ancho (1 columna) (1 COLUMNA)
+                margin-bottom: 0; // Elimina margen entre secciones
+                padding: 1em; // Reduce el padding para ajustarse al nuevo diseño
+                margin: 0; // Elimina el margen en pantallas pequeñas
+            }
+
+            img {
+                width: 25%; // El logo ocupa el 25% del espacio
+                margin-right: 1em;
+                margin-bottom: 40%; // ponerlo en esquina superior izquierda
+                
+                @media (max-width: 768px) {
+                    float: none; // Elimina el float en pantallas pequeñas
+                    display: block; // Cambia a bloque para centrarlo
+                    margin: 0 auto; // Centra la imagen
+                }
+            }
+
+            // Para el texto al lado de las imagenes
+            .text-box{
+                width: 75%;
+                h3{
+                    margin-bottom: 0.5em;
+                }
+                p{
+                    text-align: left;
+                }
+            }
+
+        }
+    }
+}
+
+/* FOOTER *************************************************************************************************************/
+
+footer {
+    text-align: center;
+
+    div {
+        background-color: $default-background;
+        margin-bottom: 0.5em;
+        padding: 0.2em 0 0 0;
+
+        img {
+            width: 3em;
+        }
+    }
+
+    p {
+        background-color: $default-background;
+        margin: $default-margin;
+        padding: 0.1em 0;
+        font: map-get($font-weights, "light") map-get($font-sizes, quote(#{&})) $font-family;
+
+        & a:hover {
+            text-decoration: underline;
+            font-weight: map-get($font-weights, "bold");
+        } 
+    }
+
+
+}

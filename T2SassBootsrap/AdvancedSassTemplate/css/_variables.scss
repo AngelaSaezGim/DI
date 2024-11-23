@@ -1,0 +1,50 @@
+// VARIABLES SIMPLES ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+$font-sizes: (
+    "cuerpo": 1rem,
+    "h3": 150%,
+    "h2": 200%,
+    "h1": 300%,
+    "nav ul li": 110%,
+    "footer p": 80%
+);
+$font-weights: (
+    "light": 300,
+    "regular": 400,
+    "bold": 700
+);
+$font-family: "Nunito", sans-serif;
+
+$max-width: 1400px;
+$default-margin: 0;
+$default-padding: 0;
+
+$default-foreground: rgb(30, 30, 30);
+$default-background: #eee;
+
+
+// VARIABLES COMPUESTAS ////////////////////////////////////////////////////////////////////////////////////////////////
+
+$cuerpo: map-get($font-weights, "regular") map-get($font-sizes, "cuerpo") $font-family;
+
+//FUNCION CAMBIAR COLORES
+
+@function random-red() {
+    $red: random(256) - 1; // 0 and 255
+    @return rgb($red, 0, 0);
+  }
+  
+  @function random-green() {
+    $green: random(256) - 1; // 0 and 255
+    @return rgb(0, $green, 0);
+  }
+
+  @function random-backgroundcolor() {
+    
+    $red: random(256) - 1;
+    $green: random(256) - 1;
+    $blue: random(256) - 1;
+    @return rgba($red, $green, $blue, 0.5);
+    
+  }
+  
