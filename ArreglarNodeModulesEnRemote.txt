@@ -1,0 +1,13 @@
+Asegúrate de tener node_modules en tu .gitignore: Abre tu archivo .gitignore y agrega la siguiente línea si no la tienes: TIENE QUE ESTAR EN EL DIRECTORIO
+
+gitignore
+node_modules/
+
+
+cd directorioProyecto
+
+git rm -r --cached node_modules/
+
+git commit -m "Eliminada la carpeta node_modules del repositorio"
+
+git push origin main
