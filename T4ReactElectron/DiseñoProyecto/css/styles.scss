@@ -1,0 +1,12 @@
+// ANTES de importar Bootstrap
+$primary: #f37f7f;
+$secundary: #f7aaaa;
+$terciary: #f3c1c1;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secundary,
+  "success": $terciary
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
