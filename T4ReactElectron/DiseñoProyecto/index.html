@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaskListApp</title>
+    <!-- Para ancho no se sobresalga-->
+    <style>body, html {
+        width: 100%;
+        overflow-x: hidden;
+    }</style>
     <!-- Mi css en el que uso scss SOLO PARA LOS COLORES NO MÁS-->
     <link rel="stylesheet" href="./css/styles.css">
     <!-- Voy a usar fontAwesome para iconos mas atractivos-->
@@ -23,9 +28,7 @@
                     class="rounded-circle bg-white shadow-lg p-5 mt-4 d-flex justify-content-center align-items-center">
                     <i class="fa-solid fa-list-check fa-2xl mt-1" style="color: #000000;"></i>
                 </div>
-                <div class="shadow-lg p-3 mt-4 text-center">
-                    <span class="fw-bold">TaskListApp</span>
-                </div>
+                    <span class="fw-bold mt-4">TaskListApp</span>
             </a>
             <hr> <!------->
             <!-- Nav Items (elementos de navegación de la sidebar)-->
@@ -43,14 +46,14 @@
         <!-- End of Sidebar -->
 
         <!-- 2 PARTE DE CONTENIDOS (DERECHA) -->
-        <div class="flex-grow-1 d-flex flex-column">
-            <!-- Topbar -->
-            <nav class="navbar navbar-expand navbar-light bg-white shadow p-3">
+        <div class="flex-grow-1 d-flex-1 flex-column">
+            <!-- 2.1- TOPBAR -->
+            <nav class="navbar navbar-expand navbar-light bg-white shadow p-4">
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none">
                     <i class="fa fa-bars"></i>
                 </button>
                 <ul class="navbar-nav ms-auto list-unstyled">
-                    <!-- Alerts -->
+                   <!-- NOTIFICACIONES -->
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
                             <i class="fas fa-bell mx-4"></i>
@@ -65,6 +68,7 @@
                             <li><a class="dropdown-item" href="#">Agrega una nueva tarea!</a></li>
                         </ul>
                     </li>
+                    <!-- USER -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" data-bs-toggle="dropdown">
                             <i class="fa-solid fa-user"></i>
@@ -82,19 +86,19 @@
                 </ul>
             </nav>
 
-            <!-- CONTENIDO DE LA PAGINA -->
-            <div class="container-fluid mt-3">
-                <!-- Page Heading -->
-                <div class="row mb-2 d-flex">
+            <!-- 2.2 CONTENIDO DE LA PAGINA -->
+            <div class="contenidoPagina">
+                <!-- Fila CREAR NUEVA TAREA-->
+                <div class="row mb-2 mt-4 d-flex">
                     <div class="col-6 mt-4 mb-5"></div>
                     <div class="col-6 text-end">
-                        <a href="#" class="btn btn-primary shadow-sm p-3">
+                        <a href="#" class="btn btn-primary shadow-sm p-3"  style="margin-right:5%">
                             <i class="fas fa-pen me-2"></i> Crear Nueva Tarea
                         </a>
                     </div>
                 </div>
 
-                <!-- Task Cards -->
+                <!-- TAREAS DECORACIÓN (uso cards) -->
                 <div class="row justify-content-center">
                     <div class="col-md-5">
                         <div class="card border-left-info shadow h-100">
@@ -131,59 +135,57 @@
                 </div>
 
                 <!-- CONTENIDO PRINCIPAl -->
-                <div class="row mt-5">
+                <div class="row mt-5"  style="min-height: 69vh;" >
                     <div class="col-12 text-center">
-                        <div class="futuro-contenido d-flex" style="min-height: 69vh;">
-
-                            <!-- Aqui quiero un "buscador" - 1 div - checkbox see completed/incompleted y otra de filtrar-->
-                            <div class="col-md-4">
-                                <!-- Check tareas completadas/incompletadas-->
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center">
-                                        <div class="col-12 d-flex">
-                                            <div class="form-check mx-3">
-                                                <input class="form-check-input" type="checkbox" id="completedTasks">
-                                                <label class="form-check-label" for="completedTasks">
-                                                    <i class="fas fa-check-circle"></i> Completed Tasks
-                                                </label>
-                                            </div>
-                                            <div class="form-check mx-3">
-                                                <input class="form-check-input" type="checkbox" id="uncompletedTasks">
-                                                <label class="form-check-label" for="uncompletedTasks">
-                                                    <i class="fas fa-times-circle"></i> Uncompleted Tasks
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                
+                            <!-- Check tareas completadas/incompletadas -->
+                            <div class="d-flex align-items-center" style="margin-left:5%">
+                                <div class="form-check mx-3">
+                                    <input class="form-check-input" type="checkbox" id="completedTasks">
+                                    <label class="form-check-label" for="completedTasks">
+                                        <i class="fas fa-check-circle"></i> Completed Tasks
+                                    </label>
                                 </div>
-                                <!-- Check FILTROS-->
-                                <div class="card-body">
-                                    <ul class="navbar-nav ms-auto list-unstyled d-flex align-items-center d-flex mx-5">
-                                        <a class="nav-link text-black d-flex align-items-center border-left-warning shadow p-3"
-                                            href="#" data-bs-toggle="collapse" data-bs-target="#collapseFilter"
-                                            aria-expanded="false">
-                                            Filtrar Tareas
-                                        </a>
-                                        <div id="collapseFilter" class="collapse">
-                                            <div class="bg-light rounded-bottom">
-                                                <a class="collapse-item d-block text-decoration-none mb-2 hover-bg-primary"
-                                                    href="#">Por Nombre</a>
-                                                <a class="collapse-item d-block text-decoration-none mb-2 hover-bg-primary"
-                                                    href="#">Por Tipo</a>
-                                                <a class="collapse-item d-block text-decoration-none mb-2 hover-bg-primary"
-                                                    href="#">Por Fecha</a>
-                                            </div>
-                                        </div>
-                                    </ul>
+                                <div class="form-check mx-3">
+                                    <input class="form-check-input" type="checkbox" id="uncompletedTasks">
+                                    <label class="form-check-label" for="uncompletedTasks">
+                                        <i class="fas fa-times-circle"></i> Uncompleted Tasks
+                                    </label>
                                 </div>
                             </div>
+                
+                            <!-- Filtrar tareas -->
+                            <div class="d-flex" style="margin-right:5%">
+                                <a class="nav-link text-black d-flex align-items-center border-left-warning shadow p-3"
+                                    href="#" data-bs-toggle="collapse" data-bs-target="#collapseFilter"
+                                    aria-expanded="false" aria-controls="collapseFilter">
+                                    Filtrar Tareas
+                                </a>
+                                <div id="collapseFilter" class="collapse mt-2">
+                                    <div class="bg-light p-3 rounded shadow">
+                                        <a class="d-block text-decoration-none mb-2" href="#">Por Nombre</a>
+                                        <a class="d-block text-decoration-none mb-2" href="#">Por Tipo</a>
+                                        <a class="d-block text-decoration-none mb-2" href="#">Por Fecha</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                
                         </div>
+                
+                        <div class="d-flex flex-grow-1 shadow p-3 mt-3 m-5">
+                            <ul class="listaDeTareas list-unstyled">
+                            <!-- Aquí irá la lista de tareas -->
+                                <li class="tareaEjemplo1 border p-5 m-2">
+                                    
+                                </li>
+                                <hr>
+                                <li class="tareaEjemplo2 border p-5 m-2">
 
-                        <div class="d-flex">
-
-                            <!-- Aqui irá la lista de tareas -->
-
-
+                                </li>
+                                <hr>
+                            </ul>
                         </div>
                     </div>
                 </div>
